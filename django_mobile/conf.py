@@ -2,11 +2,9 @@
 from django.conf import settings as django_settings
 
 try:
-    from django_settings import TEMPLATES
-    LOADERS = TEMPLATES[0]['OPTIONS']['loaders']
+    LOADERS = django_settings.TEMPLATES[0]['OPTIONS']['loaders']
 except:
-    from django_settings import TEMPLATE_LOADERS
-    LOADERS = TEMPLATE_LOADERS
+    LOADERS = django_settings.TEMPLATE_LOADERS
 
 CACHE_LOADER_NAME = 'django_mobile.loader.CachedLoader'
 DJANGO_MOBILE_LOADER = 'django_mobile.loader.Loader'
