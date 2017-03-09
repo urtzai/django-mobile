@@ -46,7 +46,7 @@ class MobileDetectionMiddleware(MiddlewareMixin):
     ))
     http_accept_regex = re.compile("application/vnd\.wap\.xhtml\+xml", re.IGNORECASE)
 
-    def __init__(self, get_response):
+    def __init__(self, get_response=None):
         user_agents_test_match = r'^(?:%s)' % '|'.join(self.user_agents_test_match)
         self.get_response = get_response
         self.user_agents_test_match_regex = re.compile(user_agents_test_match, re.IGNORECASE)
